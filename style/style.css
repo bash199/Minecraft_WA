@@ -1,14 +1,59 @@
-.container{
-   width:50vmin;
-   height: 50vmin;
-   display: grid;
-   grid-template: repeat(3,1fr) /repeat(3,1fr); 
+*{
+   box-sizing: border-box;
+   margin: 0;
+   padding:  0;
+}
+
+body{
+   display: flex;
+   flex-direction: row;
+}
+.Minecraft-container{
+   width: 70%;
+   height: 100vh ;
    background-color: aqua;
-   margin: auto;
-   margin-top:100px;
+   display: grid;
+   grid-template: repeat( 16,1fr) / repeat(16,1fr);
+}
+.cell{
+   width: 100% ;
+   height:  100%;
+   /* aspect-ratio: auto 1 / 1; */
+   /* object-fit: cover; */
+   
+
+
+}
+.tools-container{
+   width: 30% ;
+   background-color:bisque;
 }
 
 
-.red{
-   background-color: red;
+.tree{
+   background: url(/images/tree.png) center center /cover no-repeat ;
+}
+.rock{
+   background: url(/images/rock.png) center center /cover no-repeat ;
+}
+.soil{
+   background: url(/images/soil.jpg) center center /cover no-repeat ;
+}
+.axe{
+   background: url(/images/axe.png) center center /cover no-repeat ;
+}
+.pickaxe{
+   background: url(/images/pickaxe.png) center center /cover no-repeat ;
+}
+.shovel{
+   background: url(/images/shovel.png) center center /cover no-repeat ;
+}
+.grass{
+   background: url(/images/grass.png) center center /cover no-repeat ;
+
+}
+
+.leaves{
+   background: url(/images/tree-leaves.png) center center /cover no-repeat ;
+
 }
