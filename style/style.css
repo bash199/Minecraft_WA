@@ -1,0 +1,14 @@
+.container{
+   width:50vmin;
+   height: 50vmin;
+   display: grid;
+   grid-template: repeat(3,1fr) /repeat(3,1fr); 
+   background-color: aqua;
+   margin: auto;
+   margin-top:100px;
+}
+
+
+.red{
+   background-color: red;
+}
