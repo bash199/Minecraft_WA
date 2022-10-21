@@ -2,9 +2,19 @@ const container = document.querySelector('.Minecraft-container');
 
 const game = document.querySelector('.tools-container');
 
+const gridComputedStyle = window.getComputedStyle(container);
+
+// get number of grid rows
+const gridRowCount = gridComputedStyle.getPropertyValue("grid-template-rows").split(" ").length;
+// container.style.height=`${gridRowCount}vh`
+// get number of grid columns
+const gridColumnCount = gridComputedStyle.getPropertyValue("grid-template-columns").split(" ").length;
+
 let inventory ={
-   rowTemp: 16,
-   colTemp: 16,
+   height: document.body.clientHeight,
+   width: document.body.clientWidth,
+   rowTemp: gridRowCount,
+   colTemp: gridColumnCount,
    current: '',
    tree: 'tree',
    rock: 'rock',
@@ -18,12 +28,9 @@ intializeGame()
 function intializeGame(){
    for(let i = 0;i< inventory.rowTemp;i++){
       for(let k = 0;k< inventory.colTemp;k++){
-         // container.style.display='grid';
-         // container.style.gridTemplate=`repeat(${inventory.rowTemp},1fr) / repeat(${inventory.colTemp},1fr)`
          let div = document.createElement('div');
          div.setAttribute('id',`cell${i}-${k}`)
          div.setAttribute('class','cell')
-         // div.innerHTML = '';
          container.appendChild(div)
       }
    } 
@@ -32,31 +39,35 @@ function fillCells(){
    for(let k = 0;k< container.children.length;k++){
       let [i,j] = container.children[k].getAttribute('id').slice(4).split('-');
       
-      
-       fillGrass(i,j,k)
-       filltree(i,j,k)
-       fillLeaves(i,j,k)
+      fillRock(i,j,k)
+      fillGrass(i,j,k)
+      filltree(i,j,k)
+      fillLeaves(i,j,k)
    } 
 
 }
+function fillRock(i,j,k){
+
+}
+
 function fillLeaves(i,j,k){
-   if( i<8 && i>5 && j>7 && j<11 ){
+   if( i>Math.floor(gridRowCount*0.1)&&i<Math.floor(gridRowCount*0.4)&& j>Math.floor(gridColumnCount*0.6)&&j<Math.floor(gridColumnCount*0.9)){
       container.children[k].classList.add(inventory.leaves);
    }
 }
 
 function filltree(i,j,k){
-   if((i==8||i==11||i==10||i==9)&&j==9){
+   if(i<=Math.floor(gridRowCount*0.75)&&i>=Math.floor(gridRowCount*0.4)&&j>=Math.floor(gridColumnCount*0.75)&&j<Math.floor(gridColumnCount*0.75)+1){
       container.children[k].classList.add(inventory.tree);
    }
    
 }
 
 function fillGrass(i,j,k){
-   if(i==12){
+   if(i==Math.floor(gridRowCount*0.75)){
       container.children[k].classList.add(inventory.grass);
    }
-   else if(i>=13){
+   else if(i> Math.floor(gridRowCount*0.75)){
       container.children[k].classList.add(inventory.soil);
    }
 }

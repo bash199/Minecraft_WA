@@ -6,26 +6,25 @@
 
 body{
    display: flex;
-   flex-direction: row;
+   flex-direction: column;
 }
 .Minecraft-container{
-   width: 70%;
-   height: 100vh ;
+   width: 100vw;
+   height: 80vh ;
    background-color: aqua;
    display: grid;
-   grid-template: repeat( 16,1fr) / repeat(16,1fr);
+   /* grid-template: repeat(15,1fr) / repeat(22,1fr); */
+   grid-template: repeat( auto-fill,10vmin) / repeat(auto-fill,10vmin)
 }
 .cell{
-   width: 100% ;
-   height:  100%;
+   /* width: 100% ; */
+   /* height:  100%; */
    /* aspect-ratio: auto 1 / 1; */
    /* object-fit: cover; */
-   
-
-
 }
 .tools-container{
-   width: 30% ;
+   width: 100% ;
+   height: 20vh ;
    background-color:bisque;
 }
 
