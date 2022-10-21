@@ -13,22 +13,95 @@ body{
    height: 80vh ;
    background-color: aqua;
    display: grid;
-   /* grid-template: repeat(15,1fr) / repeat(22,1fr); */
-   grid-template: repeat( auto-fill,10vmin) / repeat(auto-fill,10vmin)
+   grid-template: repeat(11,1fr) / repeat(22,1fr);
+   /* grid-template: repeat( auto-fill,10vmin) / repeat(auto-fill,10vmin) */
 }
 .cell{
-   /* width: 100% ; */
-   /* height:  100%; */
-   /* aspect-ratio: auto 1 / 1; */
-   /* object-fit: cover; */
+   width: auto ;
+   height:  auto;
+   
+   
 }
 .tools-container{
    width: 100% ;
    height: 20vh ;
-   background-color:bisque;
+   background-color:gray;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
-
-
+.axe-container,
+.pickaxe-container,
+.shovel-container{
+   width: 12rem ;
+   height: 100% ;
+   padding: 5px;
+   /* background-color:black; */
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+.axe-tool,.pickaxe-tool,
+.shovel-tool{
+   width: 5rem ;
+   height: 50% ;
+   border: #ccc 1px solid;
+   cursor: pointer;
+}
+.axe-tool{
+   background: url(/images/axe.png) center center / cover no-repeat ;
+}
+.pickaxe-tool{
+   background: url(/images/pickaxe.png) center center / cover no-repeat ;
+}
+.shovel-tool{
+   background: url(/images/shovel.png) center center / cover no-repeat ;
+}
+.axe-invitory,.shovel-invitory{
+   display: flex;
+   flex-direction: column;
+}
+.wood-invitory,
+.leaves-invitory,
+.rock-invitory,
+.grass-invitory,
+.soil-invitory{
+   border: #ccc 1px solid;
+   width: 2rem ;
+   margin: 2px;
+   height: 2rem ;
+   cursor: pointer;
+}
+.wood-invitory{
+   background: url(/images/tree.png) center center /cover no-repeat ;
+}
+.leaves-invitory{
+   background: url(/images/tree-leaves.png) center center / cover no-repeat ;
+}
+.rock-invitory{
+   background: url(/images/rock.png) center center /cover no-repeat ;
+}
+.grass-invitory{
+   background: url(/images/grass.png) center center / cover no-repeat ;
+}
+.soil-invitory{
+   background: url(/images/soil.jpg) center center / cover no-repeat ;
+}
+.axe-count{
+   display: flex;
+   flex-direction: column
+}
+.wood-count,
+.leaves-count,
+.rock-count,
+.grass-count,
+.soil-count{
+   color: aliceblue;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 1rem;
+   display: inline-block;
+   margin: 8px;
+}
 .tree{
    background: url(/images/tree.png) center center /cover no-repeat ;
 }
@@ -36,23 +109,20 @@ body{
    background: url(/images/rock.png) center center /cover no-repeat ;
 }
 .soil{
-   background: url(/images/soil.jpg) center center /cover no-repeat ;
+   background: url(/images/soil.jpg) center center / cover no-repeat ;
 }
 .axe{
-   background: url(/images/axe.png) center center /cover no-repeat ;
+   background: url(/images/axe.png) center center / cover no-repeat ;
 }
 .pickaxe{
-   background: url(/images/pickaxe.png) center center /cover no-repeat ;
+   background: url(/images/pickaxe.png) center center / cover no-repeat ;
 }
 .shovel{
-   background: url(/images/shovel.png) center center /cover no-repeat ;
+   background: url(/images/shovel.png) center center / cover no-repeat ;
 }
 .grass{
-   background: url(/images/grass.png) center center /cover no-repeat ;
-
+   background: url(/images/grass.png) center center / cover no-repeat ;
 }
-
 .leaves{
-   background: url(/images/tree-leaves.png) center center /cover no-repeat ;
-
+   background: url(/images/tree-leaves.png) center center / cover no-repeat ;
 }
