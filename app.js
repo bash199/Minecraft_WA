@@ -14,13 +14,15 @@ const rockInvitory = document.querySelector('.rock-invitory');
 const grassInvitory = document.querySelector('.grass-invitory');
 const soilInvitory = document.querySelector('.soil-invitory');
 const reset = document.querySelector('.reset');
-
+const startBtn = document.querySelector('.btn-container');
+const landingPage = document.querySelector('.landing-page');
 const gridComputedStyle = window.getComputedStyle(container);
 // get number of grid rows
 const gridRowCount = gridComputedStyle.getPropertyValue("grid-template-rows").split(" ").length;
 // get number of grid columns
 const gridColumnCount = gridComputedStyle.getPropertyValue("grid-template-columns").split(" ").length;
-
+container.style.display='none';
+game.style.display='none';
 let inventory ={
    rowTemp: gridRowCount,
    colTemp: gridColumnCount,
@@ -91,7 +93,7 @@ axe.addEventListener('click',clickedAxeFunc);
 pickaxe.addEventListener('click',clickedPickaxeFunc);
 shovel.addEventListener('click',clickedShovelFunc);
 reset.addEventListener('click',resetGame)
-
+startBtn.addEventListener('click',startGame)
 woodInvitory.addEventListener('click',()=>{
    inventory.materials.forEach(element=>{
       element.style.borderColor='#ccc'
@@ -136,6 +138,11 @@ soilInvitory.addEventListener('click',()=>{
    resetcurrentTool()
    soilInvitory.style.borderColor = 'crimson'
 })
+function startGame(){
+   landingPage.style.display='none';
+   container.style.display='';
+   game.style.display='';
+}
 function resetGame(){
    container.innerHTML = '';
    intializeGame();

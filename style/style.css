@@ -13,6 +13,7 @@ body{
    background-color: aqua;
    display: grid;
    grid-template: repeat(11,1fr) / repeat(22,1fr);
+
 }
 .cell{
    width: auto ;
@@ -125,6 +126,48 @@ body{
 }
 
 
+
+
+.landing-page{
+   /* background-image: url(/images/Minecarft_Menu/nu-hero-lavabg-background.webp); */
+   width: 100vw;
+   background: url(/images/Minecarft_Menu/netherhero.jpg) center center / cover no-repeat  ;
+   height: 100vh;
+   position: relative;
+   overflow: hidden;
+}
+.netherlogo{
+   position: absolute;
+   left: 40%;
+   top: 10px;
+}
+.btn-container{
+   width: 180px;
+   height: 30px;
+   background-color: #008486;
+   color:#fff;
+   font-size: 1.2rem;
+   position: absolute; 
+   left: 47%;
+   text-align: center;
+   top: 250px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   font-weight: 700;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+.alexgif{
+   /* width: 562px; */
+   position: absolute;
+   left: 34%;
+   bottom: 8px;
+   z-index: 3;
+   overflow: hidden;
+}
+
 @media (max-width:511px){
    .tools-container{
       width: 100% ;
@@ -161,46 +204,13 @@ body{
       font-size: 0.7rem;
       margin: 4px;
    }
-}
-
-
-.landing-page{
-   background-image: url(/images/Minecarft_Menu/nu-hero-lavabg-background.webp);
-   width: 100vw;
-   height: 100vh;
-   position: relative;
-}
-.heroright{
-   width: 874px;
-   position: absolute;
-   left: 662px;
-   bottom: 100px;
-   z-index: 0;
-   overflow: hidden;
-}
-
-.heroleft{
-   width: 1080px;
-   position: absolute;
-   right: 595.2px;
-   bottom: 100px;
-   z-index: 0;
-   overflow: hidden;
-}
-.herocenter{
-   position: absolute;
-   z-index: 1;
-   width: 1080px;
-   bottom: 100px;
-   transform: translate(-58.5%,0);
-   left: 50%;
-   overflow: hidden;
-}
-.alexgif{
-   width: 562px;
-   position: absolute;
-   left: 503px;
-   bottom: 100px;
-   z-index: 3;
-   
+   #alexgif{ 
+      left: -9%;   
+   }
+   #netherlogo{
+      left: 0%;
+   }
+   .btn-container{
+      left: 25%;
+   }
 }
