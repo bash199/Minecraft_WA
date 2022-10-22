@@ -163,30 +163,44 @@ body{
    }
 }
 
-/* 
+
 .landing-page{
+   background-image: url(/images/Minecarft_Menu/nu-hero-lavabg-background.webp);
    width: 100vw;
    height: 100vh;
-} */
-.heroright{
-   width: 1080px;
-   position: absolute;
-   left: 595.2px;
-   bottom: 0;
-   z-index: 0;
+   position: relative;
 }
+.heroright{
+   width: 874px;
+   position: absolute;
+   left: 662px;
+   bottom: 100px;
+   z-index: 0;
+   overflow: hidden;
+}
+
 .heroleft{
    width: 1080px;
    position: absolute;
    right: 595.2px;
-   bottom: 0;
+   bottom: 100px;
    z-index: 0;
+   overflow: hidden;
 }
 .herocenter{
    position: absolute;
    z-index: 1;
    width: 1080px;
-   bottom: 0;
+   bottom: 100px;
    transform: translate(-58.5%,0);
    left: 50%;
+   overflow: hidden;
+}
+.alexgif{
+   width: 562px;
+   position: absolute;
+   left: 503px;
+   bottom: 100px;
+   z-index: 3;
+   
 }
