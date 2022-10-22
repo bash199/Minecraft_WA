@@ -2,8 +2,6 @@
    box-sizing: border-box;
    margin: 0;
    padding:  0;
-   /* cursor: auto; */
-   /* cursor: not-allowed; */
 }
 body{
    display: flex;
@@ -163,4 +161,32 @@ body{
       font-size: 0.7rem;
       margin: 4px;
    }
+}
+
+/* 
+.landing-page{
+   width: 100vw;
+   height: 100vh;
+} */
+.heroright{
+   width: 1080px;
+   position: absolute;
+   left: 595.2px;
+   bottom: 0;
+   z-index: 0;
+}
+.heroleft{
+   width: 1080px;
+   position: absolute;
+   right: 595.2px;
+   bottom: 0;
+   z-index: 0;
+}
+.herocenter{
+   position: absolute;
+   z-index: 1;
+   width: 1080px;
+   bottom: 0;
+   transform: translate(-58.5%,0);
+   left: 50%;
 }
