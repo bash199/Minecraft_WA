@@ -61,15 +61,37 @@ function fillCells(){
       fillGrass(i,j,k);
       fillwood(i,j,k);
       fillLeaves(i,j,k);
+      
    } 
 }
+
+
 function fillRock(i,j,k){
-   if(i<=Math.floor(gridRowCount*0.75)&&i>Math.floor(gridRowCount*0.4)&&j>=Math.floor(gridColumnCount*0.45)&&j<Math.floor(gridColumnCount*0.6)){
+   if(i<=Math.floor(gridRowCount*0.75)&&i>Math.floor(gridRowCount*0.4)&&j>=Math.floor(gridColumnCount*0.45)&&j<Math.floor(gridColumnCount*0.6)&&i!=9){
+      container.children[k].classList.add(inventory.rock);
+   }
+   if(i==7&&j<4){
+      container.children[k].classList.add(inventory.rock);
+   }
+   if(i==6&&j<3){
+      container.children[k].classList.add(inventory.rock);
+   }
+   if(i==5&&j<2){
+      container.children[k].classList.add(inventory.rock);
+   }
+   if(i==4&&j<1){
       container.children[k].classList.add(inventory.rock);
    }
 }
 function fillLeaves(i,j,k){
-   if( i>Math.floor(gridRowCount*0.1)&&i<Math.floor(gridRowCount*0.4)&& j>Math.floor(gridColumnCount*0.6)&&j<Math.floor(gridColumnCount*0.9)){
+   if( i>Math.floor(gridRowCount*0.1)+1&&i<Math.floor(gridRowCount*0.4)&& j>Math.floor(gridColumnCount*0.6)&&j<Math.floor(gridColumnCount*0.9)){
+      container.children[k].classList.add(inventory.leaves);
+      
+   }
+   if(i==2&&j>14&&j<18){
+      container.children[k].classList.add(inventory.leaves);
+   }
+   if(i==1&&j==16){
       container.children[k].classList.add(inventory.leaves);
    }
 }
@@ -236,7 +258,7 @@ function axePickUp(element){
    else if(element.target.getAttribute('class').includes(inventory.leaves)){
       inventory.leavesCount++;
       leavesPar.textContent=`X ${inventory.leavesCount}`
-      event.target.classList.remove(inventory.leaves)
+      element.target.classList.remove(inventory.leaves)
    }
 }
 
