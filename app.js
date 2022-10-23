@@ -34,11 +34,13 @@ let inventory ={
    cloud: 'cloud', 
    grass:'grass',
    leaves:'leaves',
-   woodCount: 0,
-   rockCount: 0,
-   soilCount: 0,
-   grassCount: 0,
-   leavesCount: 0,
+   count:{
+      woodCount: 0,
+      rockCount: 0,
+      soilCount: 0,
+      grassCount: 0,
+      leavesCount: 0,
+   },
    materials: [woodInvitory,leavesInvitory,rockInvitory,grassInvitory,soilInvitory,axe,pickaxe,shovel],
    materialsPara: [woodPar,leavesPar,rockPar,grassPar,soilPar]
 }
@@ -176,14 +178,11 @@ function resetGame(){
       element.textContent='X 0'
    });
    resetcurrentTool();
-   inventory.woodCount= 0;
-   inventory.rockCount= 0;
-   inventory.soilCount= 0;
-   inventory.grassCount= 0;
-   inventory.leavesCount= 0;
+   for (const prop in inventory.count){
+      inventory.count[prop] = 0;
+   }
    inventory.currentMaterial= '';
 }
-
 function resetcurrentTool(){
    inventory.currentTool = ''
 }
@@ -203,61 +202,61 @@ function clickedDiv(event){
 }
 
 function putInMatireal(element){
-   if(inventory.currentMaterial==inventory.wood&&inventory.woodCount>0&&!element.target.getAttribute('class').includes(inventory.wood)){
+   if(inventory.currentMaterial==inventory.wood&&inventory.count.woodCount>0&&!element.target.getAttribute('class').includes(inventory.count.wood)){
       element.target.classList.add('wood')
-      inventory.woodCount--;
-      woodPar.textContent=`X ${inventory.woodCount}`
+      inventory.count.woodCount--;
+      woodPar.textContent=`X ${inventory.count.woodCount}`
    }
-   else if(inventory.currentMaterial==inventory.leaves&&inventory.leavesCount>0&&!element.target.getAttribute('class').includes(inventory.leaves)){
+   else if(inventory.currentMaterial==inventory.leaves&&inventory.count.leavesCount>0&&!element.target.getAttribute('class').includes(inventory.leaves)){
       element.target.classList.add(inventory.leaves)
-      inventory.leavesCount--;
-      leavesPar.textContent=`X ${inventory.leavesCount}`
+      inventory.count.leavesCount--;
+      leavesPar.textContent=`X ${inventory.count.leavesCount}`
    }
-   else if(inventory.currentMaterial==inventory.rock&&inventory.rockCount>0&&!element.target.getAttribute('class').includes(inventory.leaves)){
+   else if(inventory.currentMaterial==inventory.rock&&inventory.count.rockCount>0&&!element.target.getAttribute('class').includes(inventory.leaves)){
       element.target.classList.add(inventory.rock)
-      inventory.rockCount--;
-      rockPar.textContent=`X ${inventory.rockCount}`
+      inventory.count.rockCount--;
+      rockPar.textContent=`X ${inventory.count.rockCount}`
    }
-   else if(inventory.currentMaterial==inventory.grass&&inventory.grassCount>0&&!element.target.getAttribute('class').includes(inventory.grass)){
+   else if(inventory.currentMaterial==inventory.grass&&inventory.count.grassCount>0&&!element.target.getAttribute('class').includes(inventory.grass)){
       element.target.classList.add(inventory.grass)
-      inventory.grassCount--;
-      grassPar.textContent=`X ${inventory.grassCount}`
+      inventory.count.grassCount--;
+      grassPar.textContent=`X ${inventory.count.grassCount}`
    }
-   else if(inventory.currentMaterial==inventory.soil&&inventory.soilCount>0&&!element.target.getAttribute('class').includes(inventory.soil)){
+   else if(inventory.currentMaterial==inventory.soil&&inventory.count.soilCount>0&&!element.target.getAttribute('class').includes(inventory.soil)){
       element.target.classList.add(inventory.soil)
-      inventory.soilCount--;
-      soilPar.textContent=`X ${inventory.soilCount}`
+      inventory.count.soilCount--;
+      soilPar.textContent=`X ${inventory.count.soilCount}`
    }
 }
 
 function shovelPickUp(element){
    if(element.target.getAttribute('class').includes(inventory.grass)){
-      inventory.grassCount++;
-      grassPar.textContent=`X ${inventory.grassCount}`
+      inventory.count.grassCount++;
+      grassPar.textContent=`X ${inventory.count.grassCount}`
       element.target.classList.remove(inventory.grass)
    }
    else if(element.target.getAttribute('class').includes(inventory.soil)){
-      inventory.soilCount++;
-      soilPar.textContent=`X ${inventory.soilCount}`
+      inventory.count.soilCount++;
+      soilPar.textContent=`X ${inventory.count.soilCount}`
       element.target.classList.remove(inventory.soil)
    }
 }
 function pickaxePickUp(element){
    if(element.target.getAttribute('class').includes(inventory.rock)){
-      inventory.rockCount++;
-      rockPar.textContent=`X ${inventory.rockCount}`
+      inventory.count.rockCount++;
+      rockPar.textContent=`X ${inventory.count.rockCount}`
       element.target.classList.remove(inventory.rock)
    }
 }
 function axePickUp(element){
    if(element.target.getAttribute('class').includes(inventory.wood)){
-      inventory.woodCount++;
-      woodPar.textContent=`X ${inventory.woodCount}`
+      inventory.count.woodCount++;
+      woodPar.textContent=`X ${inventory.count.woodCount}`
       element.target.classList.remove(inventory.wood)
    }
    else if(element.target.getAttribute('class').includes(inventory.leaves)){
-      inventory.leavesCount++;
-      leavesPar.textContent=`X ${inventory.leavesCount}`
+      inventory.count.leavesCount++;
+      leavesPar.textContent=`X ${inventory.count.leavesCount}`
       element.target.classList.remove(inventory.leaves)
    }
 }
